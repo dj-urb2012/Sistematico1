@@ -16,7 +16,10 @@ public class SistCjsmDjur {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
+        EncontrarEdades op = new EncontrarEdades();
+        int edades[] = {1, 2, 3};
+        double resultado = op.encontrarPromedio(edades);
+        System.out.println(resultado);
     }
     
 }
