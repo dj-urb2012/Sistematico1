@@ -4,6 +4,8 @@
  */
 package sistcjsmdjur;
 
+import models.EncontrarEdades;
+
 /**
  *
  * @author isi7
@@ -14,7 +16,7 @@ public class SistCjsmDjur {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
     }
     
 }
