@@ -13,8 +13,31 @@ import models.Empleado;
  */
 public class RegistroEmpleados {
     private ArrayList<Empleado> empleadosReg = new ArrayList<>();
+
     
-    public void aumentarSalario() {
+    public void aumentarSalario(String tipoCargo) {
         
+        Empleado empleado = new Empleado();
+        double porcentajeAumento = 0;
+        for(int i = 0; i < empleadosReg.size(); i++) {
+            empleado = empleadosReg.get(i);
+            if(empleado.getCargo().equals(tipoCargo)) {
+                switch(empleado.getCargo()) {
+                case "Gerente": 
+                    porcentajeAumento = (float) 0.5;
+                    double salarioFinal = empleado.getSalario() + (empleado.getSalario() * porcentajeAumento);
+                    empleado.setSalario(salarioFinal);
+                    empleadosReg.remove(i);
+                    empleadosReg.add(empleado);
+                    break;
+                case "Asistente":
+                    porcentajeAumento = (float) 0.1;
+                    break;
+                case "Secretario":
+                    porcentajeAumento = (float) 0.15;
+                    break;
+                }
+            }     
+        }
     }
 }

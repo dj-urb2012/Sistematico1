@@ -10,16 +10,27 @@ package models;
  */
 public class Empleado {
     private String nombres;
-    private String cargos;
+    private String cargo;
     private double salario;
 
     public Empleado() {
     }
 
-    public Empleado(String nombres, String cargos, double salario) {
+    public Empleado(String nombres, String cargo, double salario) {
         this.nombres = nombres;
-        this.cargos = cargos;
+        this.cargo = cargo;
         this.salario = salario;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Empleado{");
+        sb.append("nombres=").append(nombres);
+        sb.append(", cargo=").append(cargo);
+        sb.append(", salario=").append(salario);
+        sb.append('}');
+        return sb.toString();
     }
 
     public String getNombres() {
@@ -30,12 +41,12 @@ public class Empleado {
         this.nombres = nombres;
     }
 
-    public String getCargos() {
-        return cargos;
+    public String getCargo() {
+        return cargo;
     }
 
-    public void setCargos(String cargos) {
-        this.cargos = cargos;
+    public void setCargo(String cargo) {
+        this.cargo = cargo;
     }
 
     public double getSalario() {
@@ -45,6 +56,6 @@ public class Empleado {
     public void setSalario(double salario) {
         this.salario = salario;
     }
-    
+
     
 }
